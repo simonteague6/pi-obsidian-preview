@@ -14,9 +14,9 @@ const PREVIEW_FILE = "pi-preview-latest.md";
  *   ctrl+shift+b    — keyboard shortcut (configurable via PI_OBSIDIAN_PREVIEW_SHORTCUT env var)
  *
  * Configuration:
- *   Set PI_OBSIDIAN_PREVIEW_SHORTCUT to any valid pi key combo
- *   (e.g. export PI_OBSIDIAN_PREVIEW_SHORTCUT="ctrl+shift+o")
- *   to override the default ctrl+shift+b shortcut.
+ *   PI_OBSIDIAN_PREVIEW_SHORTCUT — custom key combo (default: ctrl+shift+b)
+ *   PI_OBSIDIAN_VAULT_PATH       — path to Obsidian vault (default: current directory)
+ *     Set this to use the extension globally from any directory.
  */
 
 async function extractAndOpen(ctx: any, pi: ExtensionAPI) {
@@ -42,8 +42,9 @@ async function extractAndOpen(ctx: any, pi: ExtensionAPI) {
     return;
   }
 
-  // Write to gitignored file in vault root
-  await writeFile(join(ctx.cwd, PREVIEW_FILE), markdown, "utf-8");
+  // Write to vault root (custom path or current directory)
+  const vaultPath = process.env.PI_OBSIDIAN_VAULT_PATH || ctx.cwd;
+  await writeFile(join(vaultPath, PREVIEW_FILE), markdown, "utf-8");
 
   // Wait for Obsidian's file watcher to pick up the new file
   await new Promise((r) => setTimeout(r, 500));

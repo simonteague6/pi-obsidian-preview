@@ -4,7 +4,17 @@ Open the last Pi assistant response in Obsidian — right from pi's TUI.
 
 ## Install
 
+**Per-project** (only active when pi runs from your vault):
+
 ```bash
+cd ~/your-vault
+pi install -l npm:pi-obsidian-preview
+```
+
+**Global** (active everywhere — set `PI_OBSIDIAN_VAULT_PATH` in your shell profile first):
+
+```bash
+export PI_OBSIDIAN_VAULT_PATH="$HOME/your-vault"   # add to ~/.zshrc
 pi install npm:pi-obsidian-preview
 ```
 
@@ -20,17 +30,22 @@ The extension writes the last assistant response to `pi-preview-latest.md` in yo
 ## Prerequisites
 
 - **Obsidian CLI** on PATH — install via Homebrew: `brew install obsidian`
-- **Run pi from your vault root** — `cd ~/your-vault && pi`
+- **Per-project**: run pi from your vault root (`cd ~/your-vault && pi`)
+- **Global**: set `PI_OBSIDIAN_VAULT_PATH` (see below)
 
 ## Configuration
 
-Customize the keyboard shortcut by setting an environment variable:
+| Env var | Purpose | Default |
+|---|---|---|
+| `PI_OBSIDIAN_VAULT_PATH` | Path to your Obsidian vault | Current directory |
+| `PI_OBSIDIAN_PREVIEW_SHORTCUT` | Custom key combo | `ctrl+shift+b` |
+
+Add to `~/.zshrc` or equivalent:
 
 ```bash
+export PI_OBSIDIAN_VAULT_PATH="$HOME/your-vault"
 export PI_OBSIDIAN_PREVIEW_SHORTCUT="ctrl+shift+o"
 ```
-
-Add this to your `~/.zshrc` or equivalent shell profile.
 
 ## Troubleshooting
 
