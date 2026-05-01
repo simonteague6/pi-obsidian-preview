@@ -27,6 +27,21 @@ pi install npm:pi-obsidian-preview
 
 The extension writes the last assistant response to `pi-preview-latest.md` in your vault root and opens it in Obsidian.
 
+## visual-explain skill
+
+This package includes a skill that tells the agent it can use Obsidian's full rendering palette — Mermaid diagrams, LaTeX math, callouts, and rich formatting — to explain concepts visually. The agent produces rich responses in chat; you preview them with `/preview`.
+
+| Trigger | How |
+|---|---|
+| Ask for explanation or visualization | Auto-activates on phrases like "help me visualize it", "show me", "draw a diagram", "explain how X works" |
+| Invoke explicitly | `/skill:visual-explain` |
+
+**What the agent can generate:**
+- **Mermaid diagrams** — flowchart, sequenceDiagram, classDiagram, stateDiagram, erDiagram, gantt, pie, gitGraph, mindmap, timeline, and more
+- **LaTeX math** — `$inline$` and `$$block$$` (math topics only)
+- **Obsidian callouts** — `> [!note]`, `> [!warning]`, `> [!tip]`, and 13 more types, with custom titles and foldable variants
+- **Other formatting** — highlight, strikethrough, task lists, footnotes, wikilinks, hidden comments, block anchors, YAML frontmatter
+
 ## Prerequisites
 
 - **Obsidian CLI** on PATH — install via Homebrew: `brew install obsidian`
