@@ -1,13 +1,13 @@
 {
   "name": "pi-obsidian-preview",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Open the last Pi assistant response in Obsidian — /preview command and configurable keyboard shortcut",
   "keywords": ["pi-package", "pi-extension", "obsidian"],
   "author": "Simon Teague",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simonteague/pi-obsidian-preview"
+    "url": "https://github.com/simonteague6/pi-obsidian-preview"
   },
   "pi": {
     "extensions": ["./extensions"]

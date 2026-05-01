@@ -23,7 +23,7 @@ pi install npm:pi-obsidian-preview
 | Action | How |
 |---|---|
 | Open last response in Obsidian | Type `/preview` in pi |
-| Keyboard shortcut | `Ctrl+Shift+B` |
+| Keyboard shortcut | `Ctrl+Shift+B` (optional — use `/preview` instead if you prefer) |
 
 The extension writes the last assistant response to `pi-preview-latest.md` in your vault root and opens it in Obsidian.
 
@@ -35,15 +35,20 @@ The extension writes the last assistant response to `pi-preview-latest.md` in yo
 
 ## Configuration
 
-| Env var | Purpose | Default |
+Both environment variables are optional. Only set what you need.
+
+| Env var | When to set | Default |
 |---|---|---|
-| `PI_OBSIDIAN_VAULT_PATH` | Path to your Obsidian vault | Current directory |
-| `PI_OBSIDIAN_PREVIEW_SHORTCUT` | Custom key combo | `ctrl+shift+b` |
+| `PI_OBSIDIAN_VAULT_PATH` | Only for global installs (skip for per-project) | Current directory |
+| `PI_OBSIDIAN_PREVIEW_SHORTCUT` | Only to change the default shortcut | `ctrl+shift+b` |
 
 Add to `~/.zshrc` or equivalent:
 
 ```bash
+# Required for global installs:
 export PI_OBSIDIAN_VAULT_PATH="$HOME/your-vault"
+
+# Optional — customize the shortcut:
 export PI_OBSIDIAN_PREVIEW_SHORTCUT="ctrl+shift+o"
 ```
 
