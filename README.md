@@ -1,6 +1,6 @@
 # pi-obsidian-preview
 
-Open the last Pi assistant response in Obsidian — right from pi's TUI.
+Open the last Pi assistant response in Obsidian, to preview and render Markdown, LaTex, code, diff, mermaid, and more. Inspired by pi-markdown-preview, but using obsidian's markdown rendering engine for further extensibility. 
 
 ## Install
 
