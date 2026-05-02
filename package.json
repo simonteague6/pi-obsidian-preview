@@ -1,6 +1,6 @@
 {
   "name": "pi-obsidian-preview",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Open the last Pi assistant response in Obsidian — /preview command and configurable keyboard shortcut",
   "keywords": [
     "pi-package",
