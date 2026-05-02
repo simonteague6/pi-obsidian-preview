@@ -13,7 +13,7 @@ Use Obsidian-rendered visuals to explain concepts. The user will preview respons
 ```
 flowchart, sequenceDiagram, classDiagram, stateDiagram-v2, erDiagram,
 gantt, pie, gitGraph, mindmap, timeline, quadrantChart, sankey-beta,
-block-beta, requirementDiagram, architecture-beta, c4-diagram
+block-beta, requirementDiagram, architecture-beta
 ```
 
 **Callouts** — use only in diagram-heavy responses (not in plain-text chat):
